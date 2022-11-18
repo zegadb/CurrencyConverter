@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Currency Converter</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <header>
-        <img src="#" alt="bankA">
-        <ul>
+        <img src="bank.svg" alt="bankA">
+        <ul style="list-style:none">
             <li>БАНК</li>
             <li>БИЗНЕС</li>
             <li>ИНВЕСТИЦИИ</li>
@@ -16,13 +18,38 @@
             <li>ПУТЕШЕСТВИЯ</li>
             <li>РАЗВЛЕЧЕНИЯ</li>
         </ul>
-        <button>Войти</button>
+        <div class="login">Войти</div>
     </header>
     <main>
         <p class="bigText">Конвертер валют онлайн</p>
-        <div class="left side">
-            
-        </div>
+        <section>
+            <div class="left side">
+                <p class="title">У меня есть</p>
+                <ul class="changeCurrency">
+                    <li class="selected">RUB</li>
+                    <li>USD</li>
+                    <li>AZN</li>
+                    <li>GBP</li>
+                </ul>
+                <div class="card">
+                    <input type="text" oninput="this.value = this.value.replace(/[^0-9.,]/g, '').replace(/,/g, '.').replace(/(\..*)\./g, '$1');" />
+                    <p class="relation">1 <span class="from">RUB</span> = <span class="value"></span> <span class="to">USD</span></p>
+                </div>
+            </div>
+            <div class="right side">
+                <p class="title">Хочу приобрести</p>
+                <ul class="changeCurrency">
+                    <li>RUB</li>
+                    <li class="selected">USD</li>
+                    <li>AZN</li>
+                    <li>GBP</li>
+                </ul>
+                <div class="card">
+                    <input type="number">
+                    <p class="relation">1 <span class="from">USD</span> = <span class="value"></span> <span class="to">RUB</span></p>
+                </div>
+            </div>
+        </section>
     </main>
 </body>
 </html>

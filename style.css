@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+header {
+    display: flex;
+    background-color: #F5F5F6;
+    padding: 0 100px;
+}
+ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    font-weight: 500;
+    color: #959BA4;
+    font-size: 11px;
+}
+body {
+    font-family: Roboto;
+}
+.bigText {
+    margin: auto;
+    width: fit-content;
+    font-weight: 700;
+    font-size: 36px;
+}
+section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.side {
+    font-size: 12px;
+    width: 250px;
+}
+.right {
+    margin: 0 0 0 8%;
+}
+.changeCurrency {
+    display: flex;
+    flex-direction: row;
+    border-radius: 5px;
+    color: #E5E5E5;
+    cursor: default;
+    list-style: none;
+    border-collapse: collapse;
+    font-weight: 400;
+}
+.changeCurrency .selected {
+    background-color: #833AE0;
+    border: 1px solid #833AE0;
+    color: white;
+}
+.changeCurrency li {
+    text-align: center;
+    line-height: 270%;
+    width: 25%;
+    height: 30px;
+    border: 1px solid #E5E5E5;
+    cursor: pointer;
+    transition: filter 0.18s ease-in-out;
+    border-collapse: collapse;
+    user-select: none;
+}
+.changeCurrency li:hover {
+    filter: brightness(65%);
+}
+.changeCurrency li:first-child {
+    border-radius: 4px 0 0 4px;
+}
+.changeCurrency li:last-child {
+    border-radius: 0 4px 4px 0;
+}
+.card {
+    border: 1px solid #E5E5E5;
+    border-radius: 5px;
+    margin: 20px 0 0 0;
+    padding: 10px;
+}
+input {
+    outline: none;
+    border: 0;
+}
+.card input {
+    font-size: 36px;
+    font-weight: 700;
+    width: 100%;
+}
+.relation {
+    margin: 20px 0 0 0;
+    color: #C6C6C6;
+}
+.title {
+    margin: 0 0 10px 0;
+    color: #9F9F9F;
+}
+.login {
+    font-weight: 500;
+    font-size: 11px;
+    height: 35px;
+    width: 60px;
+    background-color: white;
+    margin: 0 0 0 0;
+}
+/* HIDE SMALL BUTTONS IN INPUTS */
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
