@@ -1,5 +1,5 @@
 const convert = async (from, to) => {
-    const response = await fetch(`https://api.exchangerate.host/latest?base=${from}&symbols=${to}`)
+    const response = await fetch(`https://api.exchangerate.host/latest?base=${from}&symbols=${to}`).catch(() => showAlert())
     const data = await response.json()
     return Object.values(data.rates)[0]
 }
@@ -31,8 +31,20 @@ function setAll(side) {
         // else if (side == true) setLeft()
         if (side == false || side == true) setRight()
     })
+    .catch(() => showAlert())
 }
 setAll()
+
+function showAlert () {
+    const alert = document.createElement('p')
+    alert.textContent = 'Unable to connect to API'
+    alert.style.height = '50px'
+    alert.style.width = '150px'
+    alert.style.backgroundColor = 'red'
+    alert.style.color = 'white'
+    alert.style.position = 'absolute'
+    document.querySelector('body').appendChild(alert)
+}
 
 allLeftCur.forEach(item =>{
     item.addEventListener('click', (event) => {
