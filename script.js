@@ -1,5 +1,5 @@
 const convert = async (from, to) => {
-    const response = await fetch(`https://api.exchangerate.host/latest?base=${from}&symbols=${to}`).catch(() => showAlert())
+    const response = await fetch(`https://api.exchangerate.host/latest?base=${from}&symbols=${to}`)
     const data = await response.json()
     return Object.values(data.rates)[0]
 }
