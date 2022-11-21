@@ -4,7 +4,7 @@ const convert = async (from, to) => {
     return Object.values(data.rates)[0]
 }
 
-function setRight () { rightInput.value = format(+leftInput.value * +leftValue.textContent) }
+function setRight () { rightInput.value = format(+(leftInput.value.split(' ').join('')) * +leftValue.textContent) }
 function setLeft () { leftInput.value = format(+rightInput.value * +rightValue.textContent) }
 
 let from = 'RUB', to = 'USD'
@@ -27,8 +27,9 @@ function setAll(side) {
         rightFrom.textContent = to
         rightTo.textContent = from
         rightValue.textContent = (1 / ratio).toFixed(4)
-        if (side == false) setRight()
-        else if (side == true) setLeft()
+        // if (side == false) setRight()
+        // else if (side == true) setLeft()
+        if (side == false || side == true) setRight()
     })
 }
 setAll()
