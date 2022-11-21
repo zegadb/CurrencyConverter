@@ -18,7 +18,7 @@ header {
     padding: 0 100px 0 100px;
     justify-content: space-between;
     animation: fadeInDown;
-    animation-duration: 1.5s;
+    animation-duration: 2s;
 }
 main {
     padding: 0 5%;
