@@ -31,20 +31,9 @@ function setAll(side) {
         // else if (side == true) setLeft()
         if (side == false || side == true) setRight()
     })
-    .catch(() => showAlert())
+    .catch(() => alert("Couldn't connect to API"))
 }
 setAll()
-
-function showAlert () {
-    const alert = document.createElement('p')
-    alert.textContent = 'Unable to connect to API'
-    alert.style.height = '50px'
-    alert.style.width = '150px'
-    alert.style.backgroundColor = 'red'
-    alert.style.color = 'white'
-    alert.style.position = 'absolute'
-    document.querySelector('body').appendChild(alert)
-}
 
 allLeftCur.forEach(item =>{
     item.addEventListener('click', (event) => {
