@@ -39,6 +39,7 @@ ul {
     text-align: center;
     animation: fadeInDown;
     animation-duration: 1.5s;
+    user-select: none;
 }
 section {
     display: flex;
