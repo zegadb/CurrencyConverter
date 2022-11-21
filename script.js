@@ -3,10 +3,9 @@ const convert = async (from, to) => {
     const data = await response.json()
     return Object.values(data.rates)[0]
 }
-
 function setRight () { rightInput.value = format(+(leftInput.value.split(' ').join('')) * +leftValue.textContent) }
 function setLeft () { leftInput.value = format(+rightInput.value * +rightValue.textContent) }
-
+// initialize all needed elements
 let from = 'RUB', to = 'USD'
 const leftFrom = document.querySelector('.left .from')
 const leftTo = document.querySelector('.left .to')
@@ -18,7 +17,7 @@ const rightTo = document.querySelector('.right .to')
 const rightValue = document.querySelector('.right .value')
 const rightInput = document.querySelector('.right input')
 const allRightCur = document.querySelectorAll('.right .changeCurrency li')
-
+// update all values
 function setAll(side) {
     convert(from, to, side).then(ratio => {
         leftFrom.textContent = from
@@ -27,14 +26,11 @@ function setAll(side) {
         rightFrom.textContent = to
         rightTo.textContent = from
         rightValue.textContent = (1 / ratio).toFixed(4)
-        // if (side == false) setRight()
-        // else if (side == true) setLeft()
         if (side == false || side == true) setRight()
     })
     .catch(() => alert("Couldn't connect to API"))
-}
-setAll()
-
+} setAll()
+// currencies buttons
 allLeftCur.forEach(item =>{
     item.addEventListener('click', (event) => {
         allLeftCur.forEach(item => item.classList.remove("selected"))
@@ -43,7 +39,6 @@ allLeftCur.forEach(item =>{
         setAll(false)
     })
 })
-
 allRightCur.forEach(item =>{
     item.addEventListener('click', (event) => {
         allRightCur.forEach(item => item.classList.remove("selected"))
@@ -52,7 +47,7 @@ allRightCur.forEach(item =>{
         setAll(true)
     })
 })
-
+// both inputs
 leftInput.addEventListener('input', (event) => {
     event.target.value = event.target.value.replace(/[^0-9.,]/g, '').replace(/,/g, '.').replace(/(\..*)\./g, '$1')
     setRight()
@@ -63,7 +58,7 @@ rightInput.addEventListener('input', (event) => {
     setLeft()
     event.target.value = format(event.target.value)    
 })
-
+// formating functions
 const onlyZeros = (str) => { return str.toString().trim() == 0 }
 function format (number) {
     string = number.toString()
