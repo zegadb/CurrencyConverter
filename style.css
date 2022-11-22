@@ -225,10 +225,20 @@ input::-webkit-inner-spin-button {
     .menupc {
         font-size: 12px;
     }
+    .menupc li {
+        margin: 0 15px 0 0;
+    }
+    .login {
+        font-size: 15px;
+        line-height: 250%;
+    }
 }
 @media screen and (max-width: 860px) {
     .menupc {
         font-size: 10px;
+    }
+    .login {
+        font-size: 14px;
     }
 }
 @media screen and (max-width: 850px) {
