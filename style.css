@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
 }
-html,body{
+html{
     overflow-x: hidden;
 }
 body {
@@ -21,6 +21,9 @@ header {
     animation-duration: 2s;
     align-items: center;
 }
+.headerRight {
+    display: flex;
+}
 main {
     padding: 0 5%;
 }
@@ -32,15 +35,15 @@ main {
     font-size: 18px;
     line-height: 30px;
     background-color: rgb(252, 252, 252);
-    padding: 20px;
+    padding: 4%;
     opacity: 0;
     pointer-events: none;
     width: 180px;
     margin-left: auto;
-    margin-right: auto;
-    left: 30px;
+    margin-right: 5px;
+    left: 0;
     right: 0;
-    text-align: center;
+    text-align: right;
     box-shadow: 0 0 8px darkgray;
     border-radius: 10px;
     transition: opacity 0.2s ease-in-out, transform 0.3s ease-in-out;
@@ -58,7 +61,7 @@ i {
     cursor: pointer;
 }
 i:hover + .menu {
-    transform: translateY(150px);
+    transform: translateY(50px);
     opacity: 1;
 }
 .menupc {
@@ -181,7 +184,7 @@ input {
     height: 35px;
     width: 60px;
     background-color: white;
-    margin: 0 0 0 0;
+    margin: 0 20px 0 0;
     border-radius: 5px;
     line-height: 220%;
     text-align: center;
@@ -219,6 +222,9 @@ input::-webkit-inner-spin-button {
     }
     header {
         padding: 0.5% 5%;
+    }
+    .login {
+        margin: 0 0 0 0;
     }
 }
 @media screen and (max-width: 940px) {

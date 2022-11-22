@@ -60,14 +60,11 @@ rightInput.addEventListener('input', (event) => {
     event.target.value = format(event.target.value)    
 })
 // formating functions
-const onlyZeros = (str) => { return str.toString().trim() == 0 }
 function format (number) {
     string = number.toString()
     if (string.length == 2 && string[0] == '0' && string[1] != '.') string = string.replace('0', '')
     if (string.indexOf('.') == -1) return string.replace(/(\d)(?=(\d{3})+(\D|$))/g, '$1 ')
     let parts = string.split('.')
     parts[0] = parts[0].replace(/(\d)(?=(\d{3})+(\D|$))/g, '$1 ')
-    if (onlyZeros(parts[1])) parts[1] = ''
-    else parts[1] = parts[1].substring(0, 4)
-    return parts[0] + '.' + parts[1]
+    return (parts[0] + '.' + parts[1]).replace(/(\.\d{4}).*/g, '$1')
 }

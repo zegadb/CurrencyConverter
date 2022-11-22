@@ -12,16 +12,6 @@
 <body>
     <header>
         <img src="bank.svg" alt="bankA">
-        <i class="fa-solid fa-bars fa-2x"></i>
-        <ul style="list-style:none" class="menu">
-            <li>БАНК</li>
-            <li>БИЗНЕС</li>
-            <li>ИНВЕСТИЦИИ</li>
-            <li>СТРАХОВАНИЕ</li>
-            <li>МОБАЙЛ</li>
-            <li>ПУТЕШЕСТВИЯ</li>
-            <li>РАЗВЛЕЧЕНИЯ</li>
-        </ul>
         <ul style="list-style:none" class="menupc">
             <li>БАНК</li>
             <li>БИЗНЕС</li>
@@ -31,7 +21,19 @@
             <li>ПУТЕШЕСТВИЯ</li>
             <li>РАЗВЛЕЧЕНИЯ</li>
         </ul>
-        <div class="login">Войти</div>
+        <div class="headerRight">
+            <div class="login">Войти</div>
+            <i class="fa-solid fa-bars fa-2x"></i>
+            <ul style="list-style:none" class="menu">
+                <li>БАНК</li>
+                <li>БИЗНЕС</li>
+                <li>ИНВЕСТИЦИИ</li>
+                <li>СТРАХОВАНИЕ</li>
+                <li>МОБАЙЛ</li>
+                <li>ПУТЕШЕСТВИЯ</li>
+                <li>РАЗВЛЕЧЕНИЯ</li>
+            </ul>
+        </div>
     </header>
     <main>
         <p class="bigText">Конвертер валют онлайн</p>
@@ -45,7 +47,7 @@
                     <li>GBP</li>
                 </ul>
                 <div class="card">
-                    <input type="text" oninput="this.value = this.value.replace(/^\./g, '').replace(/^\,/g, '').replace(/[^0-9.,]/g, '').replace(/,/g, '.').replace(/(\..*)\./g, '$1').replace(/0+/g,'0');">
+                    <input type="text" oninput="this.value = this.value.replace(/^\./g, '').replace(/^\,/g, '').replace(/[^0-9.,]/g, '').replace(/,/g, '.').replace(/(\..*)\./g, '$1').replace(/^0+/g,'0').replace(/(\..*)0{4}$/g, '$1').replace(/(\.\d{4}).*/g, '$1');">
                     <p class="relation">1 <span class="from">RUB</span> = <span class="value"></span> <span class="to">USD</span></p>
                 </div>
             </div>
@@ -58,7 +60,7 @@
                     <li>GBP</li>
                 </ul>
                 <div class="card">
-                    <input type="text" oninput="this.value = this.value.replace(/^\./g, '').replace(/^\,/g, '').replace(/[^0-9.,]/g, '').replace(/,/g, '.').replace(/(\..*)\./g, '$1');">
+                    <input type="text" oninput="this.value = this.value.replace(/^\./g, '').replace(/^\,/g, '').replace(/[^0-9.,]/g, '').replace(/,/g, '.').replace(/(\..*)\./g, '$1').replace(/^0+/g,'0').replace(/(\..*)0{4}$/g, '$1').replace(/(\.\d{4}).*/g, '$1');">
                     <p class="relation">1 <span class="from">USD</span> = <span class="value"></span> <span class="to">RUB</span></p>
                 </div>
             </div>
