@@ -19,6 +19,7 @@ header {
     justify-content: space-between;
     /* animation: fadeInDown; */
     animation-duration: 2s;
+    align-items: center;
 }
 main {
     padding: 0 5%;
@@ -37,10 +38,11 @@ main {
     width: 180px;
     margin-left: auto;
     margin-right: auto;
-    left: 0;
+    left: 30px;
     right: 0;
     text-align: center;
-    box-shadow: 0 0 5px gray;
+    box-shadow: 0 0 8px darkgray;
+    border-radius: 10px;
     transition: opacity 0.2s ease-in-out, transform 0.3s ease-in-out;
 }
 .menu li:hover {
@@ -58,6 +60,25 @@ i {
 i:hover + .menu {
     transform: translateY(50px);
     opacity: 1;
+}
+.menupc {
+    display: none;
+    flex-direction: row;
+    font-size: 14px;
+    font-weight: 500;
+    color: #959BA4;
+    margin: 0 0 0 2%;
+}
+.menupc li:first-child {
+    color: black;
+}
+.menupc li {
+    margin: 0 20px 0 0;
+    cursor: pointer;
+}
+.menupc li:hover {
+    text-decoration: underline;
+    color: gray;
 }
 .bigText {
     margin: 40px auto 30px auto;
@@ -179,7 +200,7 @@ input::-webkit-inner-spin-button {
     -webkit-appearance: none;
 }
 
-@media (max-width: 425px) {
+@media screen and (max-width: 425px) {
     header {
         padding: 2% 5%;
     }
@@ -189,8 +210,48 @@ input::-webkit-inner-spin-button {
         padding: 1% 5%;
     }
 }
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
+    i, .menu {
+        display: none !important;
+    }
+    .menupc {
+        display: flex;
+    }
     header {
         padding: 0.5% 5%;
+    }
+}
+@media screen and (max-width: 940px) {
+    .menupc {
+        font-size: 12px;
+    }
+}
+@media screen and (max-width: 860px) {
+    .menupc {
+        font-size: 10px;
+    }
+}
+@media screen and (max-width: 850px) {
+    .side {
+        font-size: 16px;
+        width: 300px;
+    }
+    .changeCurrency li {
+        height: 45px;
+    }
+    .bigText {
+        font-size: 45px;
+    }
+}
+@media screen and (max-width: 725px) {
+    .side {
+        font-size: 14px;
+        width: 250px;
+    }
+    .changeCurrency li {
+        height: 40px;
+    }
+    .bigText {
+        font-size: 40px;
     }
 }

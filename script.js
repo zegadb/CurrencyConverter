@@ -26,7 +26,8 @@ function setAll(side) {
         rightFrom.textContent = to
         rightTo.textContent = from
         rightValue.textContent = (1 / ratio).toFixed(4)
-        if (side == false || side == true) setRight()
+        if (side == true) setRight()
+        else if (side == false) setLeft()
     })
     .catch(() => alert("Couldn't connect to API"))
 } setAll()
@@ -69,7 +70,3 @@ function format (number) {
     else parts[1] = parts[1].substring(0, 4)
     return parts[0] + '.' + parts[1]
 }
-// menu on mobile
-document.querySelector('i').addEventListener('click', () => {
-    
-})
