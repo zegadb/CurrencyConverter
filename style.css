@@ -17,19 +17,45 @@ header {
     background-color: #F5F5F6;
     padding: 0 100px 0 100px;
     justify-content: space-between;
-    animation: fadeInDown;
+    /* animation: fadeInDown; */
     animation-duration: 2s;
 }
 main {
     padding: 0 5%;
 }
-ul {
+.menu {
+    position: absolute;
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    font-weight: 500;
-    color: #959BA4;
+    flex-direction: column;
+    color: rgb(24, 24, 24);
     font-size: 18px;
+    line-height: 30px;
+    background-color: rgb(252, 252, 252);
+    padding: 20px;
+    opacity: 0;
+    pointer-events: none;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    transition: opacity 0.2s ease-in-out, transform 0.3s ease-in-out;
+}
+.menu li:hover {
+    color: rgb(53, 53, 53);
+    font-weight: 700;
+}
+.menu li:first-child {
+    color: rgb(53, 53, 53);
+    font-weight: 700;
+}
+i {
+    margin-top: 2px;
+    cursor: pointer;
+}
+i:hover + .menu {
+    transform: translateY(50px);
+    opacity: 1;
 }
 .bigText {
     margin: 40px auto 30px auto;
@@ -37,7 +63,7 @@ ul {
     font-weight: 700;
     font-size: 50px;
     text-align: center;
-    animation: fadeInDown;
+    /* animation: fadeInDown; */
     animation-duration: 1.5s;
     user-select: none;
 }
@@ -50,10 +76,10 @@ section {
 }
 .left {
     margin: 0 0 8% 0;
-    animation: fadeInLeft;
+    /* animation: fadeInLeft; */
 }
 .right {
-    animation: fadeInRight;
+    /* animation: fadeInRight; */
 }
 .side {
     font-size: 18px;
@@ -95,6 +121,14 @@ section {
 .changeCurrency li:last-child {
     border-radius: 0 4px 4px 0;
 }
+/* .left li {
+    animation: bounce;
+    animation-duration: 1s;
+}
+.left li:first-child { animation-delay:1s;}
+.left li:nth-child(2) { animation-delay:1.2s;}
+.left li:nth-child(3) { animation-delay:1.4s;}
+.left li:last-child { animation-delay:1.6s;} */
 .card {
     border: 1px solid #E5E5E5;
     border-radius: 5px;
@@ -131,10 +165,6 @@ input {
     float: right;
     user-select: none;
 }
-i {
-    margin-top: 2px;
-    cursor: pointer;
-}
 i:hover {
     filter: invert() brightness(50%);
 }
@@ -150,5 +180,15 @@ input::-webkit-inner-spin-button {
 @media (max-width: 425px) {
     header {
         padding: 2% 5%;
+    }
+}
+@media screen and (min-width: 425px) and (max-width: 768px) {
+    header {
+        padding: 1% 5%;
+    }
+}
+@media (min-width: 768px) {
+    header {
+        padding: 0.5% 5%;
     }
 }

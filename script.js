@@ -69,3 +69,7 @@ function format (number) {
     else parts[1] = parts[1].substring(0, 4)
     return parts[0] + '.' + parts[1]
 }
+// menu on mobile
+document.querySelector('i').addEventListener('click', () => {
+    
+})
