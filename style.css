@@ -34,7 +34,7 @@ main {
     padding: 20px;
     opacity: 0;
     pointer-events: none;
-    width: fit-content;
+    width: 180px;
     margin-left: auto;
     margin-right: auto;
     left: 0;
