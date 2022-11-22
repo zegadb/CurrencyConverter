@@ -58,7 +58,7 @@ i {
     cursor: pointer;
 }
 i:hover + .menu {
-    transform: translateY(50px);
+    transform: translateY(150px);
     opacity: 1;
 }
 .menupc {
