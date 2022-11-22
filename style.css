@@ -147,14 +147,10 @@ section {
 .changeCurrency li:last-child {
     border-radius: 0 4px 4px 0;
 }
-/* .left .title, .right .title {
-    animation: bounce;
-    animation-duration: 1.2s;
+.left .title, .right .title, .left li, .right li {
+    animation: pulse;
+    animation-duration: 0.5s;
 }
-.left li, .right li {
-    animation: bounce;
-    animation-duration: 1.2s;
-} */
 .left .title {
     animation-delay:0.3s;
 }
