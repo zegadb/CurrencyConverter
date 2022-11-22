@@ -63,6 +63,7 @@ rightInput.addEventListener('input', (event) => {
 const onlyZeros = (str) => { return str.toString().trim() == 0 }
 function format (number) {
     string = number.toString()
+    if (string.length == 2 && string[0] == '0' && string[1] != '.') string = string.replace('0', '')
     if (string.indexOf('.') == -1) return string.replace(/(\d)(?=(\d{3})+(\D|$))/g, '$1 ')
     let parts = string.split('.')
     parts[0] = parts[0].replace(/(\d)(?=(\d{3})+(\D|$))/g, '$1 ')
