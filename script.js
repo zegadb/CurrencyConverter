@@ -4,7 +4,7 @@ const convert = async (from, to) => {
     return Object.values(data.rates)[0]
 }
 function setRight () { rightInput.value = format(+(leftInput.value.split(' ').join('')) * +leftValue.textContent) }
-function setLeft () { leftInput.value = format(+rightInput.value * +rightValue.textContent) }
+function setLeft () { leftInput.value = format(+(rightInput.value.split(' ').join('')) * +rightValue.textContent) }
 // initialize all needed elements
 let from = 'RUB', to = 'USD'
 const leftFrom = document.querySelector('.left .from')
